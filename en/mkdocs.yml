@@ -21,13 +21,13 @@ site_author: WSO2
 site_url: https://wso2.com/choreo/docs
 
 # Repository
-repo_name: wso2/docs-choreo-dev
-repo_url: https://github.com/wso2/docs-choreo-dev/
-edit_uri: https://github.com/wso2/docs-choreo-dev/edit/dev/en/docs/
+repo_name: Nashaath/docs
+repo_url: https://github.com/Nashaath/docs
+edit_uri: https://github.com/Nashaath/docs/edit/main/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
-copyright: ©2023 WSO2 LLC. 
+copyright: ©2024 WSO2 LLC. 
 
 # Configuration
 theme:
