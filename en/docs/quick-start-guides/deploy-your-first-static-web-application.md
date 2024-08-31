@@ -2,7 +2,7 @@
 
 Choreo is an internal developer platform as a service that takes care of the complexities of building platforms, allowing application developers to focus on innovation and implementation. Choreo streamlines the entire process of building, deploying, monitoring, and managing your cloud-native applications.
 
-In this quick start guide, you will explore how easy it is to deploy a web application using Choreo. Here, you will use a simple web application designed to add tasks to a to-do list. 
+In this quick start guide, you will explore how to deploy a web application using Choreo. Here, you will use a simple web application designed to add tasks to a to-do list. 
 
 This guide walks you through the following steps:
 
