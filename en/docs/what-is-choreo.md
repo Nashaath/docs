@@ -2,7 +2,7 @@
 
 Choreo is an internal developer platform that redefines how you create digital experiences. Choreo empowers you to seamlessly design, develop, deploy, and govern your cloud native applications, unlocking innovation while reducing time-to-market.
 
-The following are some of the cutting-edge capabilities of Choreo:
+The following are some of the capabilities of Choreo:
   
  - Design that leads to end-to-end security, governance, and operational efficiency:
     - **Domain-driven design**: Organize your enterprise systems into domains, exposing managed APIs, events, and data through projects., A project consists of components representing units of deployment.
