@@ -46,7 +46,7 @@ jobs:
      # Step 4: Build MkDocs site
       - name: Build MkDocs site
         run: |
-          mkdocs build -c
+          mkdocs build --config-file en/mkdocs.yml
 
       # Step 5: List files in the site directory
       - name: List built content
