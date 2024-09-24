@@ -1,6 +1,5 @@
 name: Build and Deploy MkDocs
 
-# Trigger the workflow when a PR is merged into the 'main' branch
 on:
   push:
     branches:
@@ -27,9 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material
 
-      # Step 4: Build MkDocs site
+      # Step 4: Build MkDocs site using config from the 'en' directory
       - name: Build MkDocs site
-        run: mkdocs build
+        run: mkdocs build --config-file en/mkdocs.yml
 
       # Step 5: Move built content to 'site/en'
       - name: Move built content to 'site/en'
