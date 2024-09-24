@@ -53,8 +53,8 @@ jobs:
       # Step 5: Build MkDocs site using config from the 'en' directory
       - name: Build MkDocs site
         run: |
-          mkdocs build --config-file en/mkdocs.yml
-          ls -la site  # List files in the site directory for debugging
+          mkdocs build --config-file en/mkdocs.yml --site-dir en/site
+          ls -la en/site  # List files in the site directory for debugging
           
       # Step 6: Move built content to 'en/site'
       - name: Move built content to 'en/site'
