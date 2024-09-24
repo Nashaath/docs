@@ -56,7 +56,7 @@ jobs:
       # Step 5: Build MkDocs site using config from the 'en' directory
       - name: Build MkDocs site
         run: |
-          mkdocs build --config-file en/mkdocs.yml --site-dir en/site
+          mkdocs build --config-file en/mkdocs.yml --site-dir $GITHUB_WORKSPACE/en/site
  
       # Step 7: List built content to verify
       - name: List built content
