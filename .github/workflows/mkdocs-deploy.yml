@@ -57,6 +57,7 @@ jobs:
       - name: Build MkDocs site
         run: |
           mkdocs build --config-file en/mkdocs.yml --site-dir $GITHUB_WORKSPACE/en/site
+          ls -la en/site  # Check if the files exist after build
  
       # Step 7: List built content to verify
       - name: List built content
