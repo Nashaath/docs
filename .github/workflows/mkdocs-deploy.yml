@@ -57,13 +57,12 @@ jobs:
       - name: Build MkDocs site
         run: |
           mkdocs build --config-file en/mkdocs.yml --site-dir en/site
-          ls en/site  # List files in the site directory for debugging
+    
           
       # Step 6: Move built content to 'en/site'
-      #- name: Move built content to 'en/site'
-      #  run: |
-       #   rm -rf en/site/*
-       #   mv site/* en/site/ || echo "No files to move"
+      - name: Move built content to 'en/site'
+        run: |
+         mv site/* en/site/ || echo "No files to move"
 
        # Step 7: Commit and push changes to the repository
       - name: Commit and push changes
