@@ -19,6 +19,8 @@ site_name: ""
 site_description: Choreo Learning Portal
 site_author: WSO2
 site_url: https://wso2.com/choreo/docs
+site_dir: en/site  
+
 
 # Repository
 repo_name: Nashaath/docs
