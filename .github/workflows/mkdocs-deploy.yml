@@ -62,7 +62,7 @@ jobs:
       # Step 6: Move built content to 'en/site'
       - name: Move built content to 'en/site'
         run: |
-         mv site/* en/site/ || echo "No files to move"
+         mv /home/runner/work/docs/docs/en/en/site/* en/site/ || echo "No files to move"
 
        # Step 7: Commit and push changes to the repository
       - name: Commit and push changes
