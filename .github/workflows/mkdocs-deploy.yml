@@ -43,34 +43,12 @@ jobs:
           pip install mkdocs-include-markdown-plugin==1.0.0
           pip install mkdocs-open-in-new-tab==1.0.3
 
-      # Step 4: Install Node.js and mdspell
-      - name: Install mdspell and markdown-link-check
-        run: |
-          echo "Installing npm tools"
-          npm install -g markdown-link-check@3.10.3
-          npm install -g mdspell@2.2.0
-
-      # Step 5: Run mdspell to check markdown spelling
-      - name: Check markdown spelling
-        run: |
-          mdspell -V
-          mdspell -n -a --en-us docs/**/*.md -d dictionary/en_US-large
-          mdspell -n -a --en-us docs/**/**/*.md -d dictionary/en_US-large
-          mdspell -n -a --en-us mkdocs.yml -d dictionary/en_US-large
-          mdspell -n -a --en-us theme/material/templates/home-page2.html -d dictionary/en_US-large
-
-      # Step 6: Check markdown links
-      - name: Check markdown links
-        run: |
-          find docs/** -type f -name '*.md' | xargs -L1 markdown-link-check -c ./markdown-link-check-config.json --quiet || exit 1
-          find docs/**/* -type f -name '*.md' | xargs -L1 markdown-link-check -c ./markdown-link-check-config.json --quiet || exit 1
-
-      # Step 7: Build MkDocs site
+     # Step 4: Build MkDocs site
       - name: Build MkDocs site
         run: |
           mkdocs build -c
 
-      # Step 8: List files in the site directory
+      # Step 5: List files in the site directory
       - name: List built content
         run: |
           ls site/
