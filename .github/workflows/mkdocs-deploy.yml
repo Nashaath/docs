@@ -56,8 +56,12 @@ jobs:
       # Step 5: Build MkDocs site using config from the 'en' directory
       - name: Build MkDocs site
         run: |
-          mkdocs build --config-file en/mkdocs.yml --site-dir $GITHUB_WORKSPACE/en/site
- 
+          mkdocs build --config-file en/mkdocs.yml 
+      
+       # Step 6: List built content to verify
+      - name: List built content
+        run: |
+          ls -la en/site
 
        # Step 7: Commit and push changes to the repository
       - name: Commit and push changes
