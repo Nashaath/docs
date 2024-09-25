@@ -1,7 +1,7 @@
 # Choreo Marketplace
 
 The Choreo Marketplace promotes and facilitates reusing and sharing services. It allows you to share all the services deployed in Choreo.
-You can easily browse and search available services within the Marketplace and refer to the service definitions, documentation, instructions on how you can use it, etc. 
+You can easily browse and search available services within the Marketplace and refer to service definitions, documentation, instructions on how you can use it, etc. 
 
 ![Internal Marketplace](../assets/img/choreo-concepts/marketplace/internal-marketplace.png){.cInlineImage-full}
 
