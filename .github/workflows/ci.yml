@@ -34,4 +34,7 @@ jobs:
           pip install mkdocs-glightbox==0.3.4
           pip install mkdocs-include-markdown-plugin==1.0.0
           pip install mkdocs-open-in-new-tab==1.0.3
-      - run: mkdocs gh-deploy --force
+          
+      - run: |
+          mkdocs build --config-file en/mkdocs.yml 
+          mkdocs gh-deploy --force
