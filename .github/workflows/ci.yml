@@ -24,5 +24,24 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - run: |
+          echo "Installing Python dependencies"
+          pip install --upgrade pip  # Ensure pip is up-to-date
+          pip install zipp==3.0.0
+          pip install pathlib2==2.3.5
+          pip install -U --upgrade mkdocs==1.4.2
+          pip install Pygments==2.14.0
+          pip install pymdown-extensions==9.10
+          pip install mkdocs-minify-plugin==0.6.2
+          pip install mkdocs-markdownextradata-plugin==0.2.5
+          pip install mkdocs-redirects==1.2.0
+          pip install pathlib==1.0.1
+          pip install -U mkdocs-material==9.1.2
+          pip install markdown-include==0.8.1
+          pip install markdown==3.2.1
+          pip install mkdocs-exclude==1.0.2
+          pip install -U Jinja2==3.1.0
+          pip install mkdocs-glightbox==0.3.4
+          pip install mkdocs-include-markdown-plugin==1.0.0
+          pip install mkdocs-open-in-new-tab==1.0.3
       - run: mkdocs gh-deploy --config-file en/mkdocs.yml --force
