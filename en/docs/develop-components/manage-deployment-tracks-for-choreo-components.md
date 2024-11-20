@@ -101,6 +101,7 @@ Following are the actions you need to take from a deployment track perspective t
      - As a developer, you can strategically unlink and relink deployment tracks to effectively manage different versions of your services within Choreo.
      - You can create new deployment tracks for ongoing development branches like `dev` to ensure a continuous development and release cycle.
 
+
 ## Delete a deployment track
 
 If you no longer need a deployment track, you can delete it.
