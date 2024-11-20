@@ -54,12 +54,14 @@ jobs:
           npm install -g markdown-link-check
       - name: Spell Check
         run: |
+          echo "{}" > .spelling  # Ensures a basic config exists
+      - name: Run Spell Check
+        run: |
           echo "Running spell check"
-          mdspell -V
-          mdspell -n -a --en-us docs/**/*.md -d dictionary/en_US-large
+          mdspell -n -a --en-us "docs/**/*.md" -d dictionary/en_US-large
           mdspell -n -a --en-us docs/**/**/*.md -d dictionary/en_US-large
-          mdspell -n -a --en-us mkdocs.yml -d dictionary/en_US-large
-          mdspell -n -a --en-us theme/material/templates/home-page2.html -d dictionary/en_US-large
+          mdspell -n -a --en-us "mkdocs.yml" -d dictionary/en_US-large
+          mdspell -n -a --en-us "theme/material/templates/home-page2.html" -d dictionary/en_US-large
       - name: Link Check
         run: |
           echo "Running link check"
