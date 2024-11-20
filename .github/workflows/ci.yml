@@ -17,7 +17,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
@@ -44,4 +48,28 @@ jobs:
           pip install mkdocs-glightbox==0.3.4
           pip install mkdocs-include-markdown-plugin==1.0.0
           pip install mkdocs-open-in-new-tab==1.0.3
-      - run: mkdocs gh-deploy --config-file en/mkdocs.yml --force
+      - run: |
+          echo "Installing Node.js dependencies for spell and link checking"
+          npm install -g markdown-spellcheck
+          npm install -g markdown-link-check
+      - name: Spell Check
+        run: |
+          echo "Running spell check"
+          mdspell -V
+          mdspell -n -a --en-us docs/**/*.md -d dictionary/en_US-large
+          mdspell -n -a --en-us docs/**/**/*.md -d dictionary/en_US-large
+          mdspell -n -a --en-us mkdocs.yml -d dictionary/en_US-large
+          mdspell -n -a --en-us theme/material/templates/home-page2.html -d dictionary/en_US-large
+      - name: Link Check
+        run: |
+          echo "Running link check"
+          find docs/** -type f -name '*.md' | xargs -L1 markdown-link-check -c ./markdown-link-check-config.json --quiet || exit 1
+          find docs/**/* -type f -name '*.md' | xargs -L1 markdown-link-check -c ./markdown-link-check-config.json --quiet || exit 1
+      - name: Build and Deploy MkDocs
+        run: |
+          echo "Building and deploying MkDocs"
+          mkdocs build -c
+          ls site/
+          mkdocs gh-deploy --config-file en/mkdocs.yml --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
